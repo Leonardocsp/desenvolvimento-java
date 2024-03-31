@@ -1,18 +1,26 @@
 import java.util.Scanner;
 
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
-        ContaBancaria minhaConta = new ContaBancaria(123456, "Fulano de Tal");
-        System.out.println("Saldo inicial: " + minhaConta.getSaldo());
+        Scanner scanner = new Scanner(System.in);
 
-        minhaConta.depositar(1000);
-        System.out.println("Saldo após depósito: " + minhaConta.getSaldo());
+        System.out.println("Informe o número da conta:");
+        int numeroConta = scanner.nextInt();
+        scanner.nextLine();
+      
+        System.out.println("Informe o nome do titular:");
+        String nomeTitular = scanner.nextLine();
 
-        minhaConta.sacar(500);
-        System.out.println("Saldo após saque: " + minhaConta.getSaldo());
+        System.out.println("Informe o saldo inicial:");
+        double saldoInicial = scanner.nextDouble();
 
-        minhaConta.sacar(600); // Isso deve falhar, saldo insuficiente
-        System.out.println("Saldo final: " + minhaConta.getSaldo());
+        ContaBancaria conta = new ContaBancaria(numeroConta, nomeTitular, saldoInicial);
+
+        conta.depositar(500.0);
+        conta.sacar(200.0);
+
+        System.out.println("Saldo atual: R$" + conta.getSaldo());
+
+        scanner.close();
     }
 }
