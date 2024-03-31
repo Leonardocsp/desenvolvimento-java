@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main
 {
     public static void main(String[] args) {
-        // Exemplo de uso da classe ContaBancaria
         ContaBancaria minhaConta = new ContaBancaria(123456, "Fulano de Tal");
         System.out.println("Saldo inicial: " + minhaConta.getSaldo());
 
