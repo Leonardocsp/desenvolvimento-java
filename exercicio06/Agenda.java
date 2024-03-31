@@ -1,21 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Classe Agenda
 public class Agenda {
+  
     private List<Contato> contatos;
 
-    // Construtor
     public Agenda() {
-        this.contatos = new ArrayList<>();
+        contatos = new ArrayList<>();
     }
-
-    // Método para adicionar novo contato
     public void adicionarContato(Contato contato) {
         contatos.add(contato);
     }
-
-    // Método para buscar contatos por nome
+    public void removerContato(Contato contato) {
+        contatos.remove(contato);
+    }
     public List<Contato> buscarContatoPorNome(String nome) {
         List<Contato> contatosEncontrados = new ArrayList<>();
         for (Contato contato : contatos) {
