@@ -14,15 +14,11 @@ public class Produto {
         this.preco = preco;
         this.estoque = estoque;
     }
-
-    // Método para adicionar um novo produto ao estoque
     public static void adicionarProduto(String nome, String codigo, double preco, int estoque) {
         Produto novoProduto = new Produto(nome, codigo, preco, estoque);
         estoqueProdutos.put(codigo, novoProduto);
         System.out.println("Produto adicionado ao estoque: " + nome);
     }
-
-    // Método para atualizar as informações de um produto existente no estoque
     public static void atualizarProduto(String codigo, String novoNome, double novoPreco, int novoEstoque) {
         if (estoqueProdutos.containsKey(codigo)) {
             Produto produto = estoqueProdutos.get(codigo);
@@ -34,8 +30,6 @@ public class Produto {
             System.out.println("Produto não encontrado no estoque.");
         }
     }
-
-    // Método para remover um produto do estoque
     public static void removerProduto(String codigo) {
         if (estoqueProdutos.containsKey(codigo)) {
             Produto produtoRemovido = estoqueProdutos.remove(codigo);
@@ -44,8 +38,6 @@ public class Produto {
             System.out.println("Produto não encontrado no estoque.");
         }
     }
-
-    // Método para gerar um relatório sobre o estoque atual
     public static void relatorioEstoque() {
         System.out.println("------ Relatório de Estoque ------");
         if (estoqueProdutos.isEmpty()) {
@@ -63,6 +55,28 @@ public class Produto {
         }
         System.out.println("Valor Total em Estoque: R$" + valorTotal);
     }
-
-    // Getters e Setters omitidos para brevidade
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public String getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    public double getPreco() {
+        return preco;
+    }
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+    public int getEstoque() {
+        return estoque;
+    }
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
 }
