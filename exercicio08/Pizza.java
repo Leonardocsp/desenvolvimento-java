@@ -1,39 +1,22 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-class Pizza {
-    private String nomePizza;
-    private double valor;
+public class Pizza {
+    private String nome;
+    private double preco;
     private List<String> ingredientes;
 
-    public Pizza(String nomePizza, double valor, List<String> ingredientes) {
-        this.nomePizza = nomePizza;
-        this.valor = valor;
+    public Pizza(String nome, double preco, List<String> ingredientes) {
+        this.nome = nome;
+        this.preco = preco;
         this.ingredientes = ingredientes;
     }
-
-    public String getNomePizza() {
-        return nomePizza;
+    public String getNome() {
+        return nome;
     }
-
-    public void setNomePizza(String nomePizza) {
-        this.nomePizza = nomePizza;
+    public double getPreco() {
+        return preco;
     }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public List<String> getIngredientes() {
         return ingredientes;
-    }
-
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
     }
 }
